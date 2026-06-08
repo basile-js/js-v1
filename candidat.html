@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobSwift — Candidat</title>
+  <link rel="stylesheet" href="candidat.css">
+  <script src="candidat.js" defer></script>  <!-- ← defer ajouté -->
+</head>
+<body>
+<section id="candidat" class="app-screen">
+
+  <header id="headerCandidat" class="app-header">
+    <h1 class="logoEcran">Découvrir</h1>
+    <a class="btnAccueil" href="js.html">‹ Accueil</a>
+  </header>
+
+  <main class="app-main">
+
+    <!-- ONGLET OFFRES -->
+    <div id="ongletOffres" class="onglet">
+      <!-- ... ta carte swipe inchangée ... -->
+    </div>
+
+    <!-- ONGLET PROFIL (avec formulaire complet) -->
+    <!-- ---------- ONGLET PROFIL ---------- -->
+<div id="ongletProfil" class="onglet" style="display:none;">
+
+  <h2 id="titreProfil">Mon profil</h2>
+
+  <form id="formProfil" onsubmit="return false;">
+
+    <!-- SECTION 1 : Infos personnelles -->
+    <h3 id="sectionInfosPerso">Informations personnelles</h3>
+    <p>
+      <label for="profilPrenom">Prénom</label>
+      <input type="text" id="profilPrenom" placeholder="Ex : Basile">
+    </p>
+    <p>
+      <label for="profilNom">Nom</label>
+      <input type="text" id="profilNom" placeholder="Ex : Dupont">
+    </p>
+    <p>
+      <label for="profilEmail">Email</label>
+      <input type="email" id="profilEmail" placeholder="Ex : basile@email.com">
+    </p>
+    <p>
+      <label for="profilTel">Téléphone</label>
+      <input type="tel" id="profilTel" placeholder="Ex : 06 12 34 56 78">
+    </p>
+    <p>
+      <label for="profilVille">Ville</label>
+      <input type="text" id="profilVille" placeholder="Ex : Toulouse">
+    </p>
+    <p>
+      <label for="profilNaissance">Date de naissance</label>
+      <input type="date" id="profilNaissance">
+    </p>
+
+    <!-- SECTION 2 : Recherche -->
+    <h3 id="sectionRecherche">Recherche</h3>
+    <p>
+      <label for="profilPoste">Poste recherché</label>
+      <input type="text" id="profilPoste" placeholder="Ex : Développeur Front-end">
+    </p>
+    <p>
+      <label for="profilContrat">Type de contrat souhaité</label>
+      <select id="profilContrat">
+        <option value="CDI">CDI</option>
+        <option value="CDD">CDD</option>
+        <option value="Alternance">Alternance</option>
+        <option value="Stage">Stage</option>
+        <option value="Freelance">Freelance</option>
+      </select>
+    </p>
+    <p>
+      <label for="profilMobilite">Mobilité</label>
+      <select id="profilMobilite">
+        <option value="Sur site">Sur site</option>
+        <option value="Hybride">Hybride</option>
+        <option value="Télétravail">Télétravail</option>
+      </select>
+    </p>
+    <p>
+      <label for="profilSalaire">Salaire souhaité</label>
+      <input type="text" id="profilSalaire" placeholder="Ex : 35-40k €">
+    </p>
+    <p>
+      <label for="profilDispo">Disponibilité</label>
+      <input type="text" id="profilDispo" placeholder="Ex : Immédiate, sous 1 mois...">
+    </p>
+
+    <!-- SECTION 3 : Expérience & formation -->
+    <h3 id="sectionExperience">Expérience &amp; formation</h3>
+    <p>
+      <label for="profilExperience">Niveau d'expérience</label>
+      <select id="profilExperience">
+        <option value="Débutant">Débutant (0-1 an)</option>
+        <option value="Junior">Junior (1-3 ans)</option>
+        <option value="Confirmé">Confirmé (3-7 ans)</option>
+        <option value="Senior">Senior (7 ans et +)</option>
+      </select>
+    </p>
+    <p>
+      <label for="profilDiplome">Dernier diplôme</label>
+      <input type="text" id="profilDiplome" placeholder="Ex : Bachelor Chef de projet digital">
+    </p>
+    <p>
+      <label for="profilParcours">Parcours / expériences</label>
+      <textarea id="profilParcours" rows="4" placeholder="Décrivez vos expériences professionnelles..."></textarea>
+    </p>
+
+    <!-- SECTION 4 : Compétences & présentation -->
+    <h3 id="sectionCompetences">Compétences &amp; présentation</h3>
+    <p>
+      <label for="profilCompetences">Compétences (séparées par des virgules)</label>
+      <input type="text" id="profilCompetences" placeholder="Ex : HTML, CSS, JavaScript, PHP">
+    </p>
+    <p>
+      <label for="profilLangues">Langues</label>
+      <input type="text" id="profilLangues" placeholder="Ex : Français, Anglais, Portugais">
+    </p>
+    <p>
+      <label for="profilBio">Présentation / accroche</label>
+      <textarea id="profilBio" rows="3" placeholder="Quelques mots pour vous présenter aux recruteurs..."></textarea>
+    </p>
+
+    <!-- SECTION 5 : Documents -->
+    <h3 id="sectionDocuments">Documents</h3>
+    <p>
+      <label for="profilCV">CV (PDF)</label>
+      <input type="file" id="profilCV" accept=".pdf">
+    </p>
+    <p>
+      <label for="profilLinkedin">Lien LinkedIn / portfolio</label>
+      <input type="url" id="profilLinkedin" placeholder="https://...">
+    </p>
+
+    <!-- Bouton d'enregistrement -->
+    <button id="btnEnregistrerProfil" onclick="enregistrerProfil()">
+      Enregistrer mon profil
+    </button>
+
+  </form>
+
+  <!-- Aperçu du profil enregistré (carte dégradée) -->
+  <div id="apercuProfil" style="display:none;">
+    <h3 id="titreApercuProfil">Aperçu de mon profil</h3>
+    <div id="contenuApercuProfil"></div>
+  </div>
+
+</div>
+    <!-- ONGLET CANDIDATURES -->
+    <div id="ongletCandidatures" class="onglet" style="display:none;">
+      <h3>Mes candidatures</h3>
+      <ul id="mesCandidatures"></ul>
+    </div>
+
+  </main>
+
+  <nav id="navCandidat" class="app-tabbar">
+
+  <button onclick="showOnglet('offres')" aria-label="Découvrir">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+    </svg>
+  </button>
+
+  <button onclick="showOnglet('candidatures')" aria-label="Mes candidatures">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="20" height="16" x="2" y="4" rx="2"/>
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+    </svg>
+  </button>
+
+  <button onclick="showOnglet('profil')" aria-label="Profil">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+      <circle cx="12" cy="7" r="4"/>
+    </svg>
+  </button>
+
+</nav>
+
+</section>
+</body>
+</html>

@@ -1,0 +1,881 @@
+/* ============================================
+   JOBSWIFT — Accueil (simple & épuré)
+   ============================================ */
+
+:root {
+  --bg: #f5f5f7;
+  --surface: #ffffff;
+  --text: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --separator: #e5e5ea;
+  --accent: #0071e3;
+
+  --radius: 16px;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+}
+
+/* ============ CONTENEUR ACCUEIL ============ */
+#accueil {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 24px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* ============ TITRE ============ */
+#titrePrincipal {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+
+/* ============ ACCROCHE ============ */
+#accroche {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 36px;
+}
+
+/* ============ CHOIX DU RÔLE ============ */
+#choixRole {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+/* ============ CARTES DE RÔLE ============ */
+.carteRole {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 4px;
+  padding: 22px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--separator);
+  transition: transform 0.2s var(--ease), border-color 0.2s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.carteRole:active {
+  transform: scale(0.98);
+}
+
+@media (hover: hover) {
+  .carteRole:hover {
+    border-color: var(--accent);
+  }
+}
+
+/* ============ CONTENU DES CARTES ============ */
+.iconeRole {
+  font-size: 1.9rem;
+  margin-bottom: 6px;
+}
+
+.titreRole {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.descRole {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================
+   JOBSWIFT — Page candidat (simple & épuré)
+   ============================================ */
+
+:root {
+  --bg: #f5f5f7;
+  --surface: #ffffff;
+  --surface-2: #fafafa;
+  --text: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --separator: #e5e5ea;
+  --accent: #0071e3;
+  --green: #34c759;
+  --red: #ff3b30;
+
+  --radius-sm: 10px;
+  --radius: 14px;
+  --radius-lg: 18px;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+}
+
+/* ============ CONTENEUR ============ */
+#candidat {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 16px 16px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ============ HEADER ============ */
+#headerCandidat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.btnRetour {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  background: var(--surface);
+  border: 1px solid var(--separator);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btnRetour:active { background: #ececef; }
+
+.logoEcran {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ============ SOUS-NAVIGATION (onglets) ============ */
+#navCandidat {
+  display: flex;
+  gap: 4px;
+  background: #e9e9ec;
+  padding: 4px;
+  border-radius: 12px;
+}
+
+#navCandidat button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 10px;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.2s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+#navCandidat button:active { background: rgba(255,255,255,0.7); }
+
+/* ============ TITRES ============ */
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Compteur d'offres */
+#ligneCompteur {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+#compteurOffres {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ============ CARTE D'OFFRE ============ */
+#offreContainer {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  border: 1px solid var(--separator);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+#offreContainer h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+#offreContainer p {
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+}
+
+#offreContainer p strong {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+#offreDescription {
+  margin-top: 4px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ============ ACTIONS SWIPE ============ */
+#actionsCandidat {
+  display: flex;
+  gap: 12px;
+}
+
+#actionsCandidat button {
+  flex: 1;
+  padding: 15px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+#btnPasser {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--separator);
+}
+
+#btnPostuler {
+  background: var(--accent);
+  color: #fff;
+}
+
+#actionsCandidat button:active { transform: scale(0.96); }
+
+/* ============ ÉCRAN DE FIN ============ */
+#finOffres {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-secondary);
+  border: 1px solid var(--separator);
+}
+
+/* ============ MES CANDIDATURES ============ */
+#mesCandidatures {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#mesCandidatures li {
+  padding: 13px 16px;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--separator);
+  font-size: 0.9rem;
+}
+
+/* ============ FORMULAIRE PROFIL ============ */
+#formProfil {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  border: 1px solid var(--separator);
+  display: flex;
+  flex-direction: column;
+}
+
+#formProfil h3 {
+  margin: 18px 0 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--separator);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+#formProfil h3:first-child { margin-top: 0; }
+
+#formProfil p { margin: 10px 0; }
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+/* ============ CHAMPS ============ */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--separator);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 88px;
+  line-height: 1.5;
+}
+
+input::placeholder,
+textarea::placeholder { color: #b0b0b5; }
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0,113,227,0.15);
+  background: var(--surface);
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236e6e73' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  padding: 10px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+input[type="date"] { cursor: pointer; }
+
+/* ============ BOUTON ENREGISTRER ============ */
+#btnEnregistrerProfil {
+  margin-top: 20px;
+  padding: 14px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+#btnEnregistrerProfil:active { transform: scale(0.98); }
+
+/* ============ APERÇU PROFIL ============ */
+#apercuProfil {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px;
+  border: 1px solid var(--separator);
+}
+
+#contenuApercuProfil p {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+}
+
+#contenuApercuProfil p strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+#contenuApercuProfil p:first-child strong { font-size: 1.05rem; }
+
+
+
+
+
+
+/* ============================================
+   JOBSWIFT — Page recruteur (simple & épuré)
+   ============================================ */
+
+:root {
+  --bg: #f5f5f7;
+  --surface: #ffffff;
+  --surface-2: #fafafa;
+  --text: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --separator: #e5e5ea;
+  --accent: #0071e3;
+  --green: #34c759;
+  --red: #ff3b30;
+
+  --radius-sm: 10px;
+  --radius: 14px;
+  --radius-lg: 18px;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+}
+
+/* ============ CONTENEUR ============ */
+#recruteur {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 16px 16px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ============ HEADER ============ */
+#headerRecruteur {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.btnRetour {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  background: var(--surface);
+  border: 1px solid var(--separator);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btnRetour:active { background: #ececef; }
+
+.logoEcran {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ============ TITRES ============ */
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 4px;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ============ FORMULAIRE CRÉER UNE OFFRE ============ */
+#formOffre {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  border: 1px solid var(--separator);
+  display: flex;
+  flex-direction: column;
+}
+
+#formOffre p { margin: 10px 0; }
+#formOffre p:first-child { margin-top: 0; }
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+/* ============ CHAMPS ============ */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--separator);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 88px;
+  line-height: 1.5;
+}
+
+input::placeholder,
+textarea::placeholder { color: #b0b0b5; }
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0,113,227,0.15);
+  background: var(--surface);
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236e6e73' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+/* ============ BOUTON AJOUTER ============ */
+#btnAjouterOffre {
+  margin-top: 20px;
+  padding: 14px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+#btnAjouterOffre:active { transform: scale(0.98); }
+
+/* ============ FILTRES ============ */
+#ligneFiltres {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+#ligneFiltres button {
+  background: var(--surface);
+  border: 1px solid var(--separator);
+  color: var(--text);
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+#ligneFiltres button:active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* ============ CARTES OFFRES PUBLIÉES ============ */
+.carteOffrePubliee {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 12px;
+  border: 1px solid var(--separator);
+}
+
+.carteOffrePubliee h4 { margin-bottom: 10px; }
+
+.carteOffrePubliee p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 5px;
+}
+
+.carteOffrePubliee p strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Badge de statut (ouverte par défaut → vert) */
+.badgeStatut {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: rgba(52,199,89,0.12);
+  color: var(--green);
+}
+
+/* Variante fermée (à ajouter côté JS : class="badgeStatut fermee") */
+.badgeStatut.fermee {
+  background: #ececef;
+  color: var(--text-secondary);
+}
+
+.nbCandidatures {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Actions sur une offre */
+.actionsOffre {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--separator);
+}
+
+.actionsOffre button {
+  background: var(--surface-2);
+  border: 1px solid var(--separator);
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.actionsOffre button:active { background: #ececef; }
+
+/* Bouton supprimer (dernier) en rouge */
+.actionsOffre button:last-child:active {
+  background: rgba(255,59,48,0.1);
+  color: var(--red);
+  border-color: rgba(255,59,48,0.3);
+}
+
+/* ============ BLOCS CANDIDATURES ============ */
+.blocCandidatures {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 12px;
+  border: 1px solid var(--separator);
+}
+
+.blocCandidatures h4 {
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--separator);
+}
+
+.listeCandidats {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.listeCandidats li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 12px 14px;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+}
+
+.listeCandidats li > span:first-child {
+  font-weight: 500;
+  flex: 1;
+  min-width: 100px;
+}
+
+/* Statut de candidature */
+.statutCandidature {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(0,113,227,0.1);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Boutons accepter / refuser */
+.listeCandidats button {
+  border: none;
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.listeCandidats button:first-of-type {
+  background: rgba(52,199,89,0.12);
+  color: var(--green);
+}
+
+.listeCandidats button:last-of-type {
+  background: rgba(255,59,48,0.1);
+  color: var(--red);
+}
+
+.listeCandidats button:active { transform: scale(0.95); }
+
+
+#zoneDrop {
+  border: 2px dashed var(--separator);
+  border-radius: var(--radius-lg);
+  padding: 32px 20px;
+  text-align: center;
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+#zoneDrop.survol {
+  border-color: var(--accent);
+  background: rgba(0,113,227,0.04);
+}
+
+#iconeDrop { font-size: 2rem; display: block; margin-bottom: 8px; }
+
+#texteDrop {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+#sousTexteDrop {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+#aideImport {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: -6px;
+}
+
+#resultatImport {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  min-height: 1.2em;
+}
+
+

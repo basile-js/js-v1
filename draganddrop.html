@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+<body>
+
+     <!-- sur import.html -->
+     <a class="btnRetour" href="recruteur.html">‹ Retour</a>
+    <!-- ============ IMPORT EXCEL (drag & drop) ============ -->
+    <h3 id="titreImport">Importer des offres (Excel)</h3>
+    <p id="aideImport">
+      Glissez un fichier .xlsx ou .csv pour créer plusieurs offres d'un coup.
+    </p>
+
+    <div id="zoneDrop">
+      <span id="iconeDrop"></span>
+      <p id="texteDrop">Glissez votre fichier Excel ici</p>
+      <p id="sousTexteDrop">ou cliquez pour parcourir</p>
+      <input type="file" id="fichierExcel" accept=".xlsx,.xls,.csv" hidden>
+    </div>
+
+    <!-- Retour visuel après import (rempli par le JS) -->
+    <p id="resultatImport"></p>
+
+    <script>
+      afficherOffresPubliees();
+      afficherCandidatures();
+      initImportExcel();
+      </script>
+</body>
+</html>

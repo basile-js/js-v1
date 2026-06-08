@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="recruteur.css">
+    <script src="recruteur.js"></script>
+</head>
+<body>
+  <!-- ================= ÉCRAN RECRUTEUR ================= -->
+  <section id="recruteur">
+
+    <!-- En-tête de l'écran avec retour vers l'accueil -->
+    <header id="headerRecruteur">
+      <a class="btnRetour" href="js.html">‹ Accueil</a>
+      <h1 class="logoEcran">JobSwift </h1>
+    </header>
+
+    <h2 id="titreCreerOffre">Créer une offre</h2>
+
+    <form id="formOffre" onsubmit="return false;">
+      <p>
+        <label for="titre">Titre du poste</label><br>
+        <input type="text" id="titre" placeholder="Ex : Développeur Front-end">
+      </p>
+      <p>
+        <label for="entreprise">Entreprise</label><br>
+        <input type="text" id="entreprise" placeholder="Ex : JobSwift">
+      </p>
+      <p>
+        <label for="lieu">Lieu</label><br>
+        <input type="text" id="lieu" placeholder="Ex : Toulouse">
+      </p>
+      <p>
+        <label for="salaire">Salaire</label><br>
+        <input type="text" id="salaire" placeholder="Ex : 35-40k €">
+      </p>
+      <p>
+        <label for="contrat">Type de contrat</label><br>
+        <select id="contrat">
+          <option value="CDI">CDI</option>
+          <option value="CDD">CDD</option>
+          <option value="Alternance">Alternance</option>
+          <option value="Stage">Stage</option>
+          <option value="Freelance">Freelance</option>
+        </select>
+      </p>
+      <p>
+        <label for="competences">Compétences (séparées par des virgules)</label><br>
+        <input type="text" id="competences" placeholder="Ex : HTML, CSS, JavaScript">
+      </p>
+      <p>
+        <label for="desc">Description</label><br>
+        <textarea id="desc" rows="4" placeholder="Décrivez le poste..."></textarea>
+      </p>
+      <button id="btnAjouterOffre" onclick="ajouterOffre()"> Ajouter l'offre</button>
+    </form>
+
+    <!-- ============ MES OFFRES PUBLIÉES ============ -->
+    <h3 id="titreOffresPubliees">Mes offres publiées</h3>
+    <p id="ligneFiltres">
+      Filtrer :
+      <button onclick="filtrerOffres('toutes')">Toutes</button>
+      <button onclick="filtrerOffres('ouvertes')">Ouvertes</button>
+      <button onclick="filtrerOffres('fermees')">Fermées</button>
+    </p>
+
+    <!-- Chaque offre est générée en JS sur ce modèle :
+    <article class="carteOffrePubliee" data-id="...">
+      <h4>Titre <span class="badgeStatut">Ouverte</span></h4>
+      <p>Entreprise · Lieu · Contrat · Salaire</p>
+      <p>Compétences</p>
+      <p>Description</p>
+      <p>Candidatures reçues : <span class="nbCandidatures">0</span></p>
+      <div class="actionsOffre">
+        <button onclick="fermerOffre(id)">Fermer l'offre</button>
+        <button onclick="rouvrirOffre(id)"> Rouvrir l'offre</button>
+        <button onclick="supprimerOffre(id)"> Supprimer</button>
+      </div>
+    </article>
+    -->
+    <div id="offresPubliees"></div>
+
+    <!-- ============ CANDIDATURES REÇUES ============ -->
+    <h3 id="titreCandidaturesRecues">Candidatures reçues</h3>
+
+    <!-- Chaque bloc est généré en JS sur ce modèle :
+    <article class="blocCandidatures" data-offre-id="...">
+      <h4>Titre du poste</h4>
+      <ul class="listeCandidats">
+        <li>
+          <span>Nom du candidat</span>
+          <span class="statutCandidature">Nouveau</span>
+          <button onclick="accepterCandidat(...)">Accepter</button>
+          <button onclick="refuserCandidat(...)">Refuser</button>
+        </li>
+      </ul>
+    </article>
+    -->
+    <div id="candidatures"></div>
+
+  </section>
+
+  <script src="app.js"></script>
+  <script>
+    // Au chargement de la page recruteur, on affiche les offres et candidatures
+    afficherOffresPubliees();
+    afficherCandidatures();
+  </script>
+  <!-- sur recruteur.html -->
+    <a class="btnRetour" href="draganddrop.html">Importer des offres</a>
+
+    
+</body>
+</html>
+    

@@ -1,0 +1,224 @@
+/* ============================================
+   1. DESIGN TOKENS
+   ============================================ */
+:root {
+  --orange:        #ff7a59;
+  --rose:          #ff4081;
+  --rose-clair:    #ff6b9d;
+  --blanc:         #fff;
+  --gris-fonce:    #333;
+  --gris-moyen:    #888;
+  --gris-clair:    #ddd;
+
+  --radius-sm:     10px;
+  --radius-md:     16px;
+  --radius-lg:     20px;
+  --radius-xl:     30px;
+
+  --shadow-md:     0 4px 12px rgba(0,0,0,0.10);
+  --shadow-lg:     0 10px 30px rgba(0,0,0,0.15);
+
+  --space-xs:      4px;
+  --space-sm:      8px;
+  --space-md:      16px;
+  --space-lg:      24px;
+  --space-xl:      32px;
+}
+
+/* ============================================
+   2. RESET & BASE
+   ============================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, system-ui, "Segoe UI", sans-serif;
+  background: #f0f0f0;
+  min-height: 100vh;
+}
+
+/* ============================================
+   3. CADRE DE L'ÉCRAN
+   ============================================ */
+#accueil {
+  max-width: 420px;
+  margin: 0 auto;
+  min-height: 100vh;
+  
+  background: linear-gradient(160deg, var(--orange) 0%, var(--rose) 100%);
+  padding: 80px var(--space-lg) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Formes décoratives en arrière-plan */
+#accueil::before,
+#accueil::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+#accueil::before {
+  width: 300px;
+  height: 300px;
+  background: var(--rose-clair);
+  top: -100px;
+  right: -80px;
+}
+
+#accueil::after {
+  width: 250px;
+  height: 250px;
+  background: #ffb38a;
+  bottom: 100px;
+  left: -80px;
+}
+
+#accueil > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   4. TITRE ET ACCROCHE
+   ============================================ */
+#titrePrincipal {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--blanc);
+  letter-spacing: -1px;
+  margin-top: 40px;
+  margin-bottom: var(--space-sm);
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+#accroche {
+  color: rgba(255,255,255,0.9);
+  font-size: 17px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 280px;
+  line-height: 1.4;
+}
+
+/* ============================================
+   5. CHOIX DE RÔLE (cartes)
+   ============================================ */
+#choixRole {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: var(--space-xl);
+}
+
+.carteRole {
+  background: var(--blanc);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-decoration: none;
+  color: var(--gris-fonce);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.carteRole:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.carteRole:active {
+  transform: translateY(-1px);
+}
+
+#btnRoleCandidat {
+  border-left: 5px solid var(--rose);
+}
+
+#btnRoleRecruteur {
+  border-left: 5px solid var(--orange);
+}
+
+/* ============================================
+   6. ICÔNES DES CARTES
+   ============================================ */
+.iconeRole {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: var(--space-sm);
+}
+
+#btnRoleCandidat .iconeRole {
+  background: #ffe4ec;
+  color: var(--rose);
+}
+
+#btnRoleCandidat .iconeRole::before {
+  content: '';   
+
+#btnRoleRecruteur .iconeRole {
+  background: #fff0e8;
+  color: var(--orange);
+}
+
+#btnRoleRecruteur .iconeRole::before {
+  content: '';
+}
+
+/* ============================================
+   7. TEXTES DES CARTES
+   ============================================ */
+.titreRole {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gris-fonce);
+}
+
+.descRole {
+  font-size: 14px;
+  color: var(--gris-moyen);
+  line-height: 1.4;
+}
+
+/* ============================================
+   8. FLÈCHE D'INVITATION (hover)
+   ============================================ */
+.carteRole::after {
+  content: '→';
+  position: absolute;
+  right: var(--space-lg);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: var(--gris-clair);
+  transition: transform 0.2s, color 0.2s;
+}
+
+.carteRole:hover::after {
+  transform: translateY(-50%) translateX(4px);
+  color: var(--rose);
+}
