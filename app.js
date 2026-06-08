@@ -83,7 +83,7 @@ function ajouterOffre() {
   document.getElementById("competences").value = "";
   document.getElementById("desc").value = "";
 
-  alert("Offre ajoutée ✅");
+  alert("Offre ajoutée ");
   afficherOffresPubliees();
 }
 
@@ -125,10 +125,10 @@ function afficherOffresPubliees() {
       <div class="actionsOffre">
         ${
           estOuverte
-            ? `<button onclick="fermerOffre(${offre.id})">🔒 Fermer l'offre</button>`
-            : `<button onclick="rouvrirOffre(${offre.id})">🔓 Rouvrir l'offre</button>`
+            ? `<button onclick="fermerOffre(${offre.id})"> Fermer l'offre</button>`
+            : `<button onclick="rouvrirOffre(${offre.id})"> Rouvrir l'offre</button>`
         }
-        <button onclick="supprimerOffre(${offre.id})">🗑️ Supprimer</button>
+        <button onclick="supprimerOffre(${offre.id})"> Supprimer</button>
       </div>
     `;
 
@@ -210,7 +210,7 @@ function postuler() {
   });
   sauverCandidatures();
 
-  alert("Candidature envoyée 🚀");
+  alert("Candidature envoyée ");
   index++;
   afficherOffre();
   afficherMesCandidatures();
@@ -322,7 +322,7 @@ function enregistrerProfil() {
   };
 
   localStorage.setItem("profil", JSON.stringify(profil));
-  alert("Profil enregistré 💾");
+  alert("Profil enregistré ");
   afficherApercuProfil();
 }
 
@@ -575,7 +575,7 @@ function lireFichierExcel(fichier) {
       const lignes = XLSX.utils.sheet_to_json(feuille);
 
       if (lignes.length === 0) {
-        resultat.textContent = "⚠️ Le fichier est vide ou mal formaté.";
+        resultat.textContent = " Le fichier est vide ou mal formaté.";
         return;
       }
 
@@ -606,10 +606,10 @@ function lireFichierExcel(fichier) {
       sauverOffres();
       afficherOffresPubliees();
 
-      resultat.textContent = `✅ ${nbAjoutees} offre(s) importée(s) avec succès.`;
+      resultat.textContent = `${nbAjoutees} offre(s) importée(s) avec succès.`;
     } catch (err) {
       console.error(err);
-      resultat.textContent = "❌ Erreur de lecture. Vérifie le format du fichier.";
+      resultat.textContent = "Erreur de lecture. Vérifie le format du fichier.";
     }
   };
 

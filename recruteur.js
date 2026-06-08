@@ -73,7 +73,7 @@ function ajouterOffre() {
   }
 
   // Construction de l'objet offre
-  // ⚠️ Ces clés DOIVENT correspondre exactement à ce que la page candidat lit
+  // Ces clés DOIVENT correspondre exactement à ce que la page candidat lit
   const nouvelleOffre = {
     id:          Date.now(),       // identifiant unique basé sur l'horodatage
     titre:       titre,
